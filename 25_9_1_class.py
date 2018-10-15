@@ -11,44 +11,66 @@ class Restaurant():
         self.cuisine_type = cuisine_type
 
     def describe_restaurant(self):
-        """打印餐馆信息"""
-        print("餐馆的名称是： " + self.restaurant_name.title())
-        print("餐馆的类型是： " + self.cuisine_type)
+        """描述餐馆信息"""
+        message = self.restaurant_name + ' ' + self.cuisine_type
+        return  message.title()
 
     def open_restraurant(self):
         """餐馆的营业状态"""
-        print("餐馆正在营业")
+        print("The restraurant is openning.")
 '''实例'''
 
 class Restaurant():
-    --snip--
+    """创建餐馆的类"""
 
-my_restaurant = Restaurant('深夜食堂', fry)
-print("\nMy restaurant's name is " + my_restaurant.restaurant_name.title() + ".")
-print("My restaurant's cuisine type is " + my_restaurant.cuisine_type + ".")
+    def __init__(self, restaurant_name, cuisine_type):
+        """初始化属性name和type"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
 
-my_restaurant.describe_restaurant()
+    def describe_restaurant(self):
+        """描述餐馆信息"""
+        message = self.restaurant_name + ' ' + self.cuisine_type
+        return  message.title()
+
+    def open_restraurant(self):
+        """餐馆的营业状态"""
+        print("The restraurant is openning.")
+
+my_restaurant = Restaurant('深夜食堂', 'fry')
+print(my_restaurant.describe_restaurant())
 my_restaurant.open_restraurant()
 
 '''9-2 三家餐馆'''
 
 class Restaurant():
-    --snip--
+    """创建餐馆的类"""
 
-don_restaurant = Restaurant('Starbucks', coffee)
-print("\nMy restaurant's name is " + don_restaurant.restaurant_name.title() + ".")
-print("My restaurant's cuisine type is " + don_restaurant.cuisine_type + ".")
-don_restaurant.describe_restaurant()
+    def __init__(self, restaurant_name, cuisine_type):
+        """初始化属性name和type"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
 
-a_restaurant = Restaurant('一点点', milktea)
-print("\nMy restaurant's name is " + a_restaurant.restaurant_name.title() + ".")
-print("My restaurant's cuisine type is " + a_restaurant.cuisine_type + ".")
-a_restaurant.describe_restaurant()
+    def describe_restaurant(self):
+        """描述餐馆信息"""
+        message = self.restaurant_name + ' ' + self.cuisine_type
+        return  message.title()
 
-b_restaurant = Restaurant('kaoyu', toast)
-print("\nMy restaurant's name is " + b_restaurant.restaurant_name.title() + ".")
-print("My restaurant's cuisine type is " + b_restaurant.cuisine_type + ".")
-b_restaurant.describe_restaurant()
+    def open_restraurant(self):
+        """餐馆的营业状态"""
+        print("The restraurant is openning.")
+
+don_restaurant = Restaurant('Starbucks', 'coffee')
+print(don_restaurant.describe_restaurant())
+don_restaurant.open_restraurant()
+
+a_restaurant = Restaurant('一点点', 'milktea')
+print(a_restaurant.describe_restaurant())
+a_restaurant.open_restraurant()
+
+b_restaurant = Restaurant('kaoyu', 'toast')
+print(b_restaurant.describe_restaurant())
+b_restaurant.open_restraurant()
 
 
 '''9-3 用户'''
@@ -61,18 +83,21 @@ class User():
         self.age = age
 
     def describe_user(self):
-        print("name:" + self.first_name.title() + " " + self.last_name.title())
-        print("age:" + str(self.age))
+        """返回简洁的名字信息"""
+        full_name = str(self.age) + ' ' + self.first_name + ' ' + self.last_name
+        return full_name.title()
 
     def greet_user(self):
+        """问候信息"""
         print("How is everting today!")
 
 
 my_name = User('don', 'hu', 28)
-your_name = User('xiaoxiao', 'shu', 24)
-
-my_name.describe_user()
+print(my_name.describe_user())
 my_name.greet_user()
 
-your_name.describe_user()
+your_name = User('xiaoxiao', 'shu', 24)
+print(your_name.describe_user())
 your_name.greet_user()
+
+
